@@ -1,4 +1,4 @@
-const games = [
+let games = [
   { id: '1', title: 'Call of Duty', platform: ['XBOX', 'PC'] },
   { id: '2', title: 'Fortnite', platform: ['PS4', 'PC'] },
   { id: '3', title: 'Minecraft', platform: ['PS4', 'XBOX'] },
@@ -6,13 +6,13 @@ const games = [
   { id: '5', title: 'Dota 2', platform: ['PS4', 'XBOX', 'PC'] },
 ];
 
-const authors = [
+let authors = [
   { id: '1', name: 'Tom', verified: true },
   { id: '2', name: 'Jerry', verified: false },
   { id: '3', name: 'Sally', verified: true },
 ];
 
-const reviews = [
+let reviews = [
   { id: '1', rating: 9, content: 'lorem ipsum', author_id: '1', game_id: '2' },
   { id: '2', rating: 10, content: 'lorem ipsum', author_id: '2', game_id: '1' },
   { id: '3', rating: 7, content: 'lorem ipsum', author_id: '3', game_id: '3' },
@@ -21,4 +21,10 @@ const reviews = [
   { id: '6', rating: 7, content: 'lorem ipsum', author_id: '1', game_id: '2' },
   { id: '7', rating: 10, content: 'lorem ipsum', author_id: '3', game_id: '1' },
 ];
-export { games, authors, reviews };
+
+const db = {
+  games,
+  authors,
+  reviews,
+};
+export default db;

@@ -4,11 +4,10 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "compile": "tsc",
-    "start": "npm run compile && node ./dist/index.js",
+    "start": "node src/index.js",
     "start:build": "tsc -w",
     "start:run": "nodemon ./dist/index.js",
-    "start2": "concurrently npm:start:*",
+    "dev": "concurrently npm:start:*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

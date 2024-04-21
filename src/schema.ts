@@ -1,4 +1,6 @@
 export const typeDefs = `#graphql 
+
+    # ! 表示不能回傳 null
     type Game {
         id: ID!,
         title: String!,
@@ -27,13 +29,21 @@ export const typeDefs = `#graphql
         authors: [Author],
         author(id: ID!): Author
     }
+    # 列出 client 端可以執行的動作
+    type Mutation {
+        deleteGame(id: ID!): [Game]
+        addGame(game: AddGameInput!): Game
+        updateGame(id: ID!, editGame: UpdateGameInput!): Game
+    }
+    # 列出 client 端可以傳遞的輸入，並非實際的類型
+    input AddGameInput {
+        title: String!,
+        platform: [String!]!
+    }
+    input UpdateGameInput {
+        title: String,
+        platform: [String!]
+    }
 `;
 
-// 基本類型
-// INT
-// FLOAT
-// STRING
-// BOOLEAN
-// ID
 
-// 結尾加上 ! 值不能是 null
